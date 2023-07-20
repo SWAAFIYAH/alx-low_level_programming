@@ -7,7 +7,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	int x = 0;
+	int i = 0;
 	char *y, *z = "";
 
 	va_list list;
@@ -15,14 +15,17 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	if (format)
 	{
-		while (format[x])
+		while (format[i])
 		{
-			switch (format[x])
+			switch (format[i])
 			{
 				case 'c':
 					printf("%s%c", z, va_arg(list, int));
 					break;
-				case 'x':
+				case 'i':
+					printf("%s%d", z, va_arg(list, int));
+					break;
+				case 'f':
 					printf("%s%f", z, va_arg(list, double));
 					break;
 				case 's':
@@ -32,11 +35,11 @@ void print_all(const char * const format, ...)
 					printf("%s%s", z, y);
 					break;
 					default:
-					x++;
+					i++;
 					continue;
 			}
 			z = ",";
-			x++;
+			i++;
 		}
 	}
 	printf("\n");
