@@ -1,1 +1,2 @@
-my bit manipulation class
+My bit manipulation class
+

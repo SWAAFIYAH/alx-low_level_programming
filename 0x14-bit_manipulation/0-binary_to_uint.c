@@ -1,21 +1,21 @@
 #include "main.h"
 /**
- * binary_to_uint - changes binary to unsigned int
- * @b: string
- * Return: unsigned ints
+ * binary_to_uint - change binary no. to int (unsigned)
+ * @b: no. to change
+ * Return: changed no.
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int z;
-	unsigned int k = 0;
+	int m;
+	unsigned int home;
 
 	if (!b)
 		return (0);
-	for (z = 0; b[z]; z++)
+	for (m = 0; b[m]; m++)
 	{
-		if (b[z] < '0' || b[z] > '1')
+		if (b[m] < '0' || b[m] > '1')
 			return (0);
-		k = 2 * k + (b[z] - '0');
+		home = 2 * home + (b[m] - '0');
 	}
-	return (k);
+	return (home);
 }
