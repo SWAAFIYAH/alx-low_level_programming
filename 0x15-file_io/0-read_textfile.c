@@ -2,25 +2,25 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * read_textfile - reads text file and print to std output
- * @letters: no. of lettersfor reading
- * @filename: file to be read
+ * read_textfile - reads file to stdoutput
+ * @filename: file to read
+ * @letters: letters to read
  * Return: no. of bytes read
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *pointer;
-	ssize_t integer;
-	ssize_t mass;
-	ssize_t world;
+	char *home;
+	ssize_t fill;
+	ssize_t a;
+	ssize_t honey;
 
-	integer = open(filename, O_RDONLY);
-	if (integer == -1)
+	fill = open(filename, O_RDONLY);
+	if (fill == -1)
 		return (0);
-	pointer = malloc(sizeof(char) * letters);
-	world = read(integer, pointer, letters);
-	mass = write(STDOUT_FILENO, pointer, world);
-	free(pointer);
-	close(integer);
-	return (mass);
+	home = malloc(sizeof(char) * letters);
+	honey = read(fill, home, letters);
+	a = write(STDOUT_FILENO, home, honey);
+	free(home);
+	close(fill);
+	return (a);
 }
