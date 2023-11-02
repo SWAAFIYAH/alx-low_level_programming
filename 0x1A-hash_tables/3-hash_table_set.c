@@ -40,7 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	n->key = strdup(key);
-	if (new->key == NULL)
+	if (n->key == NULL)
 	{
 		free(n);
 		return (0);

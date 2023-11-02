@@ -1,7 +1,7 @@
-#include "hash_tables"
+#include "hash_tables.h"
 /**
  * hash_table_get - Retrieves value associated with
- *                  a key in a hash table.
+ *                  a key in hash table.
  * @ht: A pointer to hash table.
  * @key: The key to get the value of.
  *
@@ -16,7 +16,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
 
-	idx = key_idx((const unsigned char *)key, ht->size);
+	idx = key_index((const unsigned char *)key, ht->size);
 	if (idx >= ht->size)
 		return (NULL);
 
